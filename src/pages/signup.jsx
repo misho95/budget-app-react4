@@ -1,6 +1,7 @@
 import Input from "../components/input";
 import { useState } from "react";
 import GlobalStore from '../globalStore';
+import { v4 as uuidv4 } from 'uuid';
 
 function SignUp(){  
 
@@ -42,7 +43,7 @@ function SignUp(){
         setEmailError(null);
 
         addUser({
-            id: 0,
+            id: uuidv4(),
             user: userName,
             pass: passWord,
             email,

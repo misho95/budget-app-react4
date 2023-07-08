@@ -4,6 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Main from './components/main'
 import ProtecdedRoute from './prodected.route'
+import ProtectedLogin from './protected.login'
 import LeftNav from './components/leftnav'
 import Header from './components/header'
 import HomePage from './pages/homepage'
@@ -29,9 +30,11 @@ const router = createBrowserRouter([
     element: 
     <>
       <LeftNav />
-      <Main>
-        <SignIn />
-      </Main>
+      <ProtectedLogin>
+        <Main>
+          <SignIn />
+        </Main>
+      </ProtectedLogin>
     </>
   },
   {
@@ -39,9 +42,11 @@ const router = createBrowserRouter([
     element: 
     <>
       <LeftNav />
-      <Main>
-        <SignUp />
-      </Main>
+      <ProtectedLogin>
+        <Main>
+          <SignUp />
+        </Main>
+      </ProtectedLogin>
     </>
   }
 ])

@@ -1,22 +1,21 @@
+import GlobalStore from "./globalStore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GlobalStore from "./globalStore";
 
-function ProtecdedRoute( {children} ){
+function ProtectedLogin( {children} ){
 
     const ID = GlobalStore(state => state.ID);
     const navigate = useNavigate();
 
     useEffect( () => {
-        if(ID === null){
-            navigate('/signin');
+        if(ID !== null){
+            navigate('/');
         }
     }, [])
-   
-    
+
     return(
-        ID !== null && children
+        ID === null && children
     )
 }
 
-export default ProtecdedRoute;
+export default ProtectedLogin;

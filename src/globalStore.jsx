@@ -4,7 +4,8 @@ import { persist } from 'zustand/middleware';
 const Store = (set) => ({
     userDataBase: [],
     addUser: (userDataBase) => set((state) => ({ userDataBase : [...state.userDataBase, userDataBase]})),
-    ID: null,
+    ID: false,
+    setID: (ID) => set((state) => ({ID: ID})),
 });
 
 

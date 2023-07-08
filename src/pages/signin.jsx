@@ -1,8 +1,12 @@
 import Input from "../components/input";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import GlobalStore from "../globalStore";
 
 function SignIn(){  
+
+    const userDataBase = GlobalStore(state => state.userDataBase);
+    const setID = GlobalStore(state => state.setID);
 
     const navigate = useNavigate();
 
@@ -29,6 +33,20 @@ function SignIn(){
         }
         setUserNameError(null);
         setPassWordError(null);
+
+        const user = userDataBase.find( (usr) => {
+            if(usr.user === userName){
+                return usr;
+            }
+        })
+
+
+
+        if(user && user.pass === passWord){
+            setID(user.id);
+            navigate('/');
+        }
+        
     }
 
     return(
