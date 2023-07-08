@@ -2,12 +2,14 @@ import Input from "../components/input";
 import { useState } from "react";
 import GlobalStore from '../globalStore';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from "react-router-dom";
 
 function SignUp(){  
 
     const userDataBase = GlobalStore(state => state.userDataBase);
     const addUser = GlobalStore(state => state.addUser);
 
+    const navigate = useNavigate();
 
     const [ userName, setUserName] = useState('');
     const [ userNameError, setUserNameError] = useState(null);
@@ -48,6 +50,8 @@ function SignUp(){
             pass: passWord,
             email,
         });
+
+        navigate('/signin')
     }
 
     return(

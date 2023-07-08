@@ -11,7 +11,7 @@ function Input({type, legend, error, helperText, value, set}){
             leg.current.classList.add('-translate-y-1/2')
             leg.current.classList.remove('-top-4')
         }
-    })
+    }, [])
 
     const inputFocus = () => {
         leg.current.classList.remove('top-1/2')

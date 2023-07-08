@@ -18,7 +18,7 @@ function Header(){
     }
 
     return(
-        <div className="px-5 py-3">გამარჯობა {user.user} <button className="bg-red-500 px-2 py-1 rounded-md" onClick={signout}>გამოსვლა</button></div>
+        <div className="px-5 py-3">გამარჯობა {user?.user} <button className="bg-red-500 px-2 py-1 rounded-md" onClick={signout}>გამოსვლა</button></div>
     )
 }
 
