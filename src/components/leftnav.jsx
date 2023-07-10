@@ -17,12 +17,19 @@ function LeftNav(){
     const links = [
         {
             name: 'home',
-            url: '/'
+            url: '/',
+            show: ID === null ? false : true
         },
         {
             name: 'account_circle',
-            url: '/signin'
+            url: '/signin',
+            show: ID === null ? true : false
         },
+        {
+            name: 'add_circle',
+            url: '/invoice',
+            show: ID === null ? false : true
+        }
     ];
 
     const GetLink = (val, url) => {
@@ -41,6 +48,7 @@ function LeftNav(){
                 <div>
                 {
                 links.map( (link, index) => {
+                    if(link.show === true)
                     return(
                         <div key={index}>
                             {GetLink(link.name, link.url)}

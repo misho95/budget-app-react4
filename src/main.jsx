@@ -6,7 +6,6 @@ import Main from './components/main'
 import ProtecdedRoute from './prodected.route'
 import ProtectedLogin from './protected.login'
 import LeftNav from './components/leftnav'
-import Header from './components/header'
 import HomePage from './pages/homepage'
 import SignIn from './pages/signin'
 import SignUp from './pages/signup'
@@ -19,7 +18,6 @@ const router = createBrowserRouter([
       <LeftNav />
       <ProtecdedRoute>
         <Main>
-          <Header />
           <HomePage />
         </Main>
       </ProtecdedRoute>
