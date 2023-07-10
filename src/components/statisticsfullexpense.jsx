@@ -1,6 +1,6 @@
 function StatisticsFullExpense(){
     return(
-        <div className="bg-white text-gray-600 shadow-sm p-3 rounded-lg w-full sm:w-fit">
+        <div className="bg-white text-gray-600 shadow-sm p-3 rounded-lg w-full sm:w-fit h-fit">
         <div className="flex flex-col">
             <div>
                 <p className="text-sm text-gray-400">სულ ხარჯი</p>
