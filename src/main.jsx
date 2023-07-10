@@ -9,6 +9,7 @@ import LeftNav from './components/leftnav'
 import HomePage from './pages/homepage'
 import SignIn from './pages/signin'
 import SignUp from './pages/signup'
+import Header from './components/header'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       <LeftNav />
       <ProtecdedRoute>
         <Main>
+          <Header />
           <HomePage />
         </Main>
       </ProtecdedRoute>
